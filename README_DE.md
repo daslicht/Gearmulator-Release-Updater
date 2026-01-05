@@ -107,6 +107,8 @@ gearmulator-release-updater/
 - macOS (für automatische Installations-Features)
 - NW.js (enthalten in nwjs.app)
 
+**Hinweis**: Die Version im Repository ist als macOS-App verpackt (`GRU.app`). Für Windows muss der `app.nw` Ordner aus `GRU.app/Contents/Resources/app.nw` manuell in eine Windows NW.js Distribution kopiert werden.
+
 ### App ausführen
 Doppelklick auf `nwjs.app` oder vom Terminal aus:
 ```bash
