@@ -11,7 +11,7 @@ Eine Desktop-Anwendung zum Anzeigen, Filtern und automatischen Installieren von 
 - **Format-Filter**: AU, VST3, VST2, CLAP, LV2
 - **Produkt-Filter**: Individuelle Checkboxen für alle Gearmulator-Produkte
   - JE8086, NodalRed2x, Osirus, OsirusFX, OsTIrus, OsTIrusFX, Vavra, VavraFX, Xenia, XeniaFX
-- **Nur Updates**: Zeigt nur Plugins mit verfügbaren Updates an
+- **Nur Updates**: Zeigt nur Plugins mit verfügbaren Updates an (nur macOS)
 
 ### 🔄 Installations-Status
 - ✓ **Installiert** - Plugin ist derzeit installiert (nur macOS)

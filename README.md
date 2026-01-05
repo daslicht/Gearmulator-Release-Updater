@@ -11,7 +11,7 @@ A desktop application for viewing, filtering, and automatically installing Gearm
 - **Format Filter**: AU, VST3, VST2, CLAP, LV2
 - **Product Filter**: Individual checkboxes for all Gearmulator products
   - JE8086, NodalRed2x, Osirus, OsirusFX, OsTIrus, OsTIrusFX, Vavra, VavraFX, Xenia, XeniaFX
-- **Updates Only**: Show only plugins with available updates
+- **Updates Only**: Show only plugins with available updates (macOS only)
 
 ### 🔄 Installation Status
 - ✓ **Installed** - Plugin is currently installed (macOS only)
