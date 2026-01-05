@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NW.js Release Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="appTitle">Gearmulator Release Updater</h1>
+            <p class="subtitle" id="appSubtitle">Aktuelle Releases mit Filter-Optionen</p>
+            <button id="langToggle" class="lang-toggle" title="Sprache wechseln / Switch language">
+                <span class="lang-icon">DE</span>
+            </button>
+            <button id="themeToggle" class="theme-toggle" title="Dark/Light Mode umschalten">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </header>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label for="formatFilter" id="labelFormat">Format:</label>
+                <select id="formatFilter">
+                    <option value="all" data-i18n="allFormats">Alle Formate</option>
+                    <option value="au" data-platforms="macos">AU</option>
+                    <option value="vst3" data-platforms="windows,macos,linux">VST3</option>
+                    <option value="vst2" data-platforms="windows,macos,linux">VST2</option>
+                    <option value="clap" data-platforms="windows,macos,linux">CLAP</option>
+                    <option value="lv2" data-platforms="linux">LV2</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label class="checkbox-label updates-only-label">
+                    <input type="checkbox" id="showUpdatesOnly">
+                    <span id="labelUpdatesOnly">🔄 Nur Updates anzeigen</span>
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <label class="checkbox-label install-after-label">
+                    <input type="checkbox" id="installAfterDownload">
+                    <span id="labelInstallAfter">🛠️ Install after download</span>
+                </label>
+            </div>
+
+            <button id="refreshBtn" class="btn-refresh"><span id="btnRefresh">🔄 Aktualisieren</span></button>
+        </div>
+
+        <div class="products-filter">
+            <h3 id="labelProducts">Produkte:</h3>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="JE8086" checked>
+                    <span>JE8086</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="NodalRed2x" checked>
+                    <span>NodalRed2x</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="Osirus" checked>
+                    <span>Osirus</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="OsirusFX" checked>
+                    <span>OsirusFX</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="OsTIrus" checked>
+                    <span>OsTIrus</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="OsTIrusFX" checked>
+                    <span>OsTIrusFX</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="Vavra" checked>
+                    <span>Vavra</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="VavraFX" checked>
+                    <span>VavraFX</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="Xenia" checked>
+                    <span>Xenia</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="product-checkbox" value="XeniaFX" checked>
+                    <span>XeniaFX</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="stat-label" id="labelFiltered">Gefilterte Downloads:</span>
+                <span class="stat-value" id="filteredCount">0</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label" id="labelTotal">Gesamt Downloads:</span>
+                <span class="stat-value" id="totalCount">0</span>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">Lade Releases...</div>
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="releaseInfo" class="release-info" style="display: none;">
+            <h2 id="releaseName"></h2>
+            <div class="release-meta">
+                <span id="releaseDate"></span>
+                <span id="releaseVersion"></span>
+            </div>
+        </div>
+
+        <div id="downloadsList" class="downloads-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
