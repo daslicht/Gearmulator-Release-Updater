@@ -2,7 +2,7 @@
 
 [🇩🇪 Deutsche Version](README_DE.md)
 
-A desktop application for viewing, filtering, and automatically installing Gearmulator plugin releases from GitHub.
+A desktop application for viewing, filtering, and automatically installing Gearmulator plugin releases from GitHub (automatic installation: macOS only).
 
 ## Features
 
