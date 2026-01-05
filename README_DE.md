@@ -44,7 +44,7 @@ Aktivieren Sie "Install after download" um automatisch:
 ## Installation
 
 ### Option 1: Verwenden Sie das mitgelieferte NW.js-Bundle
-Doppelklicken Sie einfach auf `nwjs.app`, um die Anwendung zu starten.
+Doppelklicken Sie einfach auf `GRU.app`, um die Anwendung zu starten.
 
 ### Option 2: Verwenden Sie Ihr eigenes NW.js
 1. NW.js herunterladen von: https://nwjs.io/
