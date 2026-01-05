@@ -21,6 +21,15 @@
 
         <div class="controls">
             <div class="filter-group">
+                <label for="platformFilter" id="labelPlatform">Platform:</label>
+                <select id="platformFilter">
+                    <option value="macos">macOS</option>
+                    <option value="windows">Windows</option>
+                    <option value="linux">Linux</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
                 <label for="formatFilter" id="labelFormat">Format:</label>
                 <select id="formatFilter">
                     <option value="all" data-i18n="allFormats">Alle Formate</option>
@@ -32,14 +41,14 @@
                 </select>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group" id="updatesOnlyGroup">
                 <label class="checkbox-label updates-only-label">
                     <input type="checkbox" id="showUpdatesOnly">
                     <span id="labelUpdatesOnly">🔄 Nur Updates anzeigen</span>
                 </label>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group" id="installAfterGroup">
                 <label class="checkbox-label install-after-label">
                     <input type="checkbox" id="installAfterDownload">
                     <span id="labelInstallAfter">🛠️ Install after download</span>

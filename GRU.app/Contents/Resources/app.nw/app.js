@@ -92,6 +92,7 @@ const translations = {
 };
 
 // DOM Elements
+const platformFilter = document.getElementById('platformFilter');
 const formatFilter = document.getElementById('formatFilter');
 const refreshBtn = document.getElementById('refreshBtn');
 const productCheckboxes = document.querySelectorAll('.product-checkbox');
@@ -112,7 +113,17 @@ const filteredCount = document.getElementById('filteredCount');
 const totalCount = document.getElementById('totalCount');
 
 // Event Listeners
-formatFilter.addEventListener('change', applyFilters);
+platformFilter.addEventListener('change', () => {
+    updateFormatOptions();
+    updateInstallOption();
+    applyFilters();
+});
+
+formatFilter.addEventListener('change', () => {
+    updateInstallOption();
+    applyFilters();
+});
+
 refreshBtn.addEventListener('click', fetchReleases);
 productCheckboxes.forEach(checkbox => {
     checkbox.addEventListener('change', applyFilters);
@@ -124,6 +135,8 @@ langToggle.addEventListener('click', toggleLanguage);
 // Initialize
 initTheme();
 initLanguage();
+updateFormatOptions(); // Set initial format options based on platform
+updateInstallOption(); // Set initial visibility of install option
 scanInstalledPlugins();
 fetchReleases();
 
@@ -371,7 +384,63 @@ function displayReleaseInfo(data) {
 }
 
 // Apply filters to downloads
+function updateFormatOptions() {
+    const platform = platformFilter.value;
+    const currentFormat = formatFilter.value;
+    const formatOptions = formatFilter.querySelectorAll('option');
+    
+    formatOptions.forEach(option => {
+        const platforms = option.getAttribute('data-platforms');
+        
+        // Always show "all" option
+        if (option.value === 'all') {
+            option.style.display = 'block';
+            option.disabled = false;
+            return;
+        }
+        
+        // Show/hide based on platform compatibility
+        if (platforms && platforms.includes(platform)) {
+            option.style.display = 'block';
+            option.disabled = false;
+        } else {
+            option.style.display = 'none';
+            option.disabled = true;
+        }
+    });
+    
+    // If current format is not available for selected platform, reset to "all"
+    const currentOption = formatFilter.querySelector(`option[value="${currentFormat}"]`);
+    if (currentOption && currentOption.disabled) {
+        formatFilter.value = 'all';
+    }
+}
+
+function updateInstallOption() {
+    const installAfterGroup = document.getElementById('installAfterGroup');
+    const updatesOnlyGroup = document.getElementById('updatesOnlyGroup');
+    
+    // Only show install and updates options for macOS
+    if (platformFilter.value === 'macos') {
+        updatesOnlyGroup.style.display = 'block';
+        installAfterGroup.style.display = 'block';
+        // Disable if LV2 is selected
+        if (formatFilter.value === 'lv2') {
+            installAfterDownload.disabled = true;
+            installAfterDownload.checked = false;
+        } else {
+            installAfterDownload.disabled = false;
+        }
+    } else {
+        updatesOnlyGroup.style.display = 'none';
+        installAfterGroup.style.display = 'none';
+        showUpdatesOnly.checked = false;
+        installAfterDownload.checked = false;
+    }
+}
+
 function applyFilters() {
+    const platform = platformFilter.value;
     const format = formatFilter.value;
     const selectedProducts = Array.from(productCheckboxes)
         .filter(cb => cb.checked)
@@ -379,7 +448,7 @@ function applyFilters() {
     const updatesOnly = showUpdatesOnly.checked;
 
     const filtered = allDownloads.filter(download => {
-        const platformMatch = download.platform === 'macos'; // Only macOS
+        const platformMatch = download.platform === platform;
         const formatMatch = format === 'all' || download.format === format;
         const productMatch = selectedProducts.length === 0 || selectedProducts.includes(download.product);
         const updateMatch = !updatesOnly || download.installStatus === 'update-available';
@@ -404,10 +473,11 @@ function displayDownloads(downloads) {
     }
 
     downloadsList.innerHTML = downloads.map((download, index) => {
-        const statusBadge = getStatusBadge(download.installStatus);
+        const statusBadge = platformFilter.value === 'macos' ? getStatusBadge(download.installStatus) : '';
         const downloadId = `download-${index}`;
+        const dataStatus = platformFilter.value === 'macos' ? download.installStatus : '';
         return `
-        <div class="download-item" data-status="${download.installStatus}" id="${downloadId}">
+        <div class="download-item" data-status="${dataStatus}" id="${downloadId}">
             <div class="download-info">
                 <div class="download-name">${download.name}</div>
                 <div class="download-tags">

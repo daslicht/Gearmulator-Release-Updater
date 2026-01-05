@@ -7,23 +7,24 @@ A desktop application for viewing, filtering, and automatically installing Gearm
 ## Features
 
 ### 🎯 Smart Filtering
+- **Platform Filter**: macOS, Windows, Linux
 - **Format Filter**: AU, VST3, VST2, CLAP, LV2
 - **Product Filter**: Individual checkboxes for all Gearmulator products
   - JE8086, NodalRed2x, Osirus, OsirusFX, OsTIrus, OsTIrusFX, Vavra, VavraFX, Xenia, XeniaFX
 - **Updates Only**: Show only plugins with available updates
 
 ### 🔄 Installation Status
-- ✓ **Installed** - Plugin is currently installed
-- 🔄 **Update Available** - Newer version is available for download
+- ✓ **Installed** - Plugin is currently installed (macOS only)
+- 🔄 **Update Available** - Newer version is available for download (macOS only)
 - ○ **Not Installed** - Plugin is not yet installed
 
-Automatically compares installed plugins with available releases by scanning:
+Automatically compares installed plugins with available releases by scanning (macOS only):
 - `/Library/Audio/Plug-Ins/Components` (AU)
 - `/Library/Audio/Plug-Ins/VST` (VST2)
 - `/Library/Audio/Plug-Ins/VST3` (VST3)
 - `/Library/Audio/Plug-Ins/CLAP` (CLAP)
 
-### 🛠️ Automatic Installation
+### 🛠️ Automatic Installation (macOS only)
 Enable "Install after download" to automatically:
 1. Download the selected plugin
 2. Extract the archive

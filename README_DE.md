@@ -7,23 +7,24 @@ Eine Desktop-Anwendung zum Anzeigen, Filtern und automatischen Installieren von 
 ## Features
 
 ### 🎯 Intelligente Filterung
+- **Plattform-Filter**: macOS, Windows, Linux
 - **Format-Filter**: AU, VST3, VST2, CLAP, LV2
 - **Produkt-Filter**: Individuelle Checkboxen für alle Gearmulator-Produkte
   - JE8086, NodalRed2x, Osirus, OsirusFX, OsTIrus, OsTIrusFX, Vavra, VavraFX, Xenia, XeniaFX
 - **Nur Updates**: Zeigt nur Plugins mit verfügbaren Updates an
 
 ### 🔄 Installations-Status
-- ✓ **Installiert** - Plugin ist derzeit installiert
-- 🔄 **Update verfügbar** - Neuere Version ist zum Download verfügbar
+- ✓ **Installiert** - Plugin ist derzeit installiert (nur macOS)
+- 🔄 **Update verfügbar** - Neuere Version ist zum Download verfügbar (nur macOS)
 - ○ **Nicht installiert** - Plugin ist noch nicht installiert
 
-Vergleicht automatisch installierte Plugins mit verfügbaren Releases durch Scannen von:
+Vergleicht automatisch installierte Plugins mit verfügbaren Releases durch Scannen von (nur macOS):
 - `/Library/Audio/Plug-Ins/Components` (AU)
 - `/Library/Audio/Plug-Ins/VST` (VST2)
 - `/Library/Audio/Plug-Ins/VST3` (VST3)
 - `/Library/Audio/Plug-Ins/CLAP` (CLAP)
 
-### 🛠️ Automatische Installation
+### 🛠️ Automatische Installation (nur macOS)
 Aktivieren Sie "Install after download" um automatisch:
 1. Das ausgewählte Plugin herunterzuladen
 2. Das Archiv zu entpacken
