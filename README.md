@@ -4,8 +4,6 @@
 
 A desktop application for viewing, filtering, and automatically installing Gearmulator plugin releases from GitHub.
 
-![App Screenshot](icon.png)
-
 ## Features
 
 ### 🎯 Smart Filtering
