@@ -64,11 +64,11 @@ Die grundlegenden Such- und Filter-Funktionen funktionieren auf allen Plattforme
 ## Installation
 
 ### macOS (Empfohlen)
-1. Laden Sie `GRU-macOS-[version].zip` von [Releases](https://github.com/yourusername/gearmulator-release-updater/releases) herunter
+1. Laden Sie `GRU-macOS-[version].zip` von [Releases](https://github.com/daslicht/gearmulator-release-updater/releases) herunter
 2. Entpacken und starten Sie `GRU.app`
 
 ### Windows (Empfohlen)
-1. Laden Sie `GRU-Windows-[version].zip` von [Releases](https://github.com/yourusername/gearmulator-release-updater/releases) herunter
+1. Laden Sie `GRU-Windows-[version].zip` von [Releases](https://github.com/daslicht/gearmulator-release-updater/releases) herunter
 2. Entpacken und starten Sie `GRU.exe`
 
 ### Eigenes NW.js verwenden (Alle Plattformen)
@@ -76,14 +76,14 @@ Wenn Sie NW.js installiert haben, können Sie die App direkt aus dem Repository 
 
 1. Repository klonen:
    ```bash
-   git clone https://github.com/yourusername/gearmulator-release-updater.git
+   git clone https://github.com/daslicht/gearmulator-release-updater.git
    ```
 2. Mit Ihrer NW.js Installation ausführen:
    ```bash
    /pfad/zu/nw gearmulator-release-updater/app.nw
    ```
 
-Alternativ können Sie `app.nw.zip` von [Releases](https://github.com/yourusername/gearmulator-release-updater/releases) herunterladen, wenn Sie das Repository nicht klonen möchten.
+Alternativ können Sie `app.nw.zip` von [Releases](https://github.com/daslicht/gearmulator-release-updater/releases) herunterladen, wenn Sie das Repository nicht klonen möchten.
 
 ## Verwendung
 

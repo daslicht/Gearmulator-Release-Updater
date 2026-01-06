@@ -63,11 +63,11 @@ The core browsing and filtering features work on all platforms. Automatic instal
 ## Installation
 
 ### macOS (Recommended)
-1. Download `GRU-macOS-[version].zip` from [Releases](https://github.com/yourusername/gearmulator-release-updater/releases)
+1. Download `GRU-macOS-[version].zip` from [Releases](https://github.com/daslicht/gearmulator-release-updater/releases)
 2. Extract and run `GRU.app`
 
 ### Windows (Recommended)
-1. Download `GRU-Windows-[version].zip` from [Releases](https://github.com/yourusername/gearmulator-release-updater/releases)
+1. Download `GRU-Windows-[version].zip` from [Releases](https://github.com/daslicht/gearmulator-release-updater/releases)
 2. Extract and run `GRU.exe`
 
 ### Use your own NW.js (All Platforms)
@@ -75,14 +75,14 @@ If you have NW.js installed, you can run the app directly from the repository:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/gearmulator-release-updater.git
+   git clone https://github.com/daslicht/gearmulator-release-updater.git
    ```
 2. Run with your NW.js installation:
    ```bash
    /path/to/nw gearmulator-release-updater/app.nw
    ```
 
-Alternatively, download `app.nw.zip` from [Releases](https://github.com/yourusername/gearmulator-release-updater/releases) if you don't want to clone the repository.
+Alternatively, download `app.nw.zip` from [Releases](https://github.com/daslicht/gearmulator-release-updater/releases) if you don't want to clone the repository.
 
 ## Usage
 
