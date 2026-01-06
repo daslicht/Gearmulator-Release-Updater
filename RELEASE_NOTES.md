@@ -47,7 +47,12 @@ Enable "Install after download" to automatically:
 
 **macOS:**
 1. Download `GRU-macOS-1.0.0.zip`
-2. Extract and run `GRU.app`
+2. Extract the archive
+3. Remove quarantine attributes by running in Terminal:
+   ```bash
+   xattr -cr GRU.app
+   ```
+4. Run `GRU.app`
 
 **Windows:**
 1. Download `GRU-Windows-1.0.0.zip`
