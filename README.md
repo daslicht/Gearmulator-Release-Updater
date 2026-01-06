@@ -1,5 +1,6 @@
 # Gearmulator Release Updater
 
+> ⚠️ **Disclaimer**: This project is 100% vibe coded. I could do it manually, but that takes longer and this way I have more time for other important things like making music.
 
 A desktop application for viewing, filtering, and automatically installing Gearmulator plugin releases from GitHub (automatic installation: macOS only).
 
