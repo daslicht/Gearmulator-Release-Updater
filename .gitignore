@@ -1,6 +1,7 @@
 # Build-Ordner
 builds/
 dist/
+release/
 
 # NW.js Runtime
 nwjs/
