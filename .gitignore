@@ -1,0 +1,19 @@
+# Build-Ordner
+builds/
+dist/
+
+# Releases (nur lokal, nicht ins Repository)
+release/
+
+# NW.js Runtime
+nwjs/
+nw.exe
+nw
+
+# macOS
+.DS_Store
+
+# Temporäre Dateien
+*.tmp
+*.log
+downloads/

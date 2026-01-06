@@ -1,6 +1,5 @@
 # Gearmulator Release Updater
 
-[🇩🇪 Deutsche Version](README_DE.md)
 
 A desktop application for viewing, filtering, and automatically installing Gearmulator plugin releases from GitHub (automatic installation: macOS only).
 
@@ -11,20 +10,20 @@ A desktop application for viewing, filtering, and automatically installing Gearm
 - **Format Filter**: AU, VST3, VST2, CLAP, LV2
 - **Product Filter**: Individual checkboxes for all Gearmulator products
   - JE8086, NodalRed2x, Osirus, OsirusFX, OsTIrus, OsTIrusFX, Vavra, VavraFX, Xenia, XeniaFX
-- **Updates Only**: Show only plugins with available updates (macOS only)
+- **Updates Only**: Show only plugins with available updates
 
 ### 🔄 Installation Status
-- ✓ **Installed** - Plugin is currently installed (macOS only)
-- 🔄 **Update Available** - Newer version is available for download (macOS only)
+- ✓ **Installed** - Plugin is currently installed
+- 🔄 **Update Available** - Newer version is available for download
 - ○ **Not Installed** - Plugin is not yet installed
 
-Automatically compares installed plugins with available releases by scanning (macOS only):
+Automatically compares installed plugins with available releases by scanning:
 - `/Library/Audio/Plug-Ins/Components` (AU)
 - `/Library/Audio/Plug-Ins/VST` (VST2)
 - `/Library/Audio/Plug-Ins/VST3` (VST3)
 - `/Library/Audio/Plug-Ins/CLAP` (CLAP)
 
-### 🛠️ Automatic Installation (macOS only)
+### 🛠️ Automatic Installation
 Enable "Install after download" to automatically:
 1. Download the selected plugin
 2. Extract the archive
@@ -42,17 +41,48 @@ Enable "Install after download" to automatically:
 - See release version and publication date
 - File sizes and download counts
 
+## Platform Notes
+
+### macOS
+**Full feature set including:**
+- Installation status detection (installed/update available)
+- Automatic plugin installation with one click
+- Automatic security attribute removal (`xattr -cr`)
+- "Updates Only" filter
+- Plugin directory scanning
+
+### Windows & Linux
+**Download functionality only:**
+- Browse and filter all Gearmulator releases
+- Download plugins manually
+- Manual installation required (extract and copy to plugin directories)
+- No automatic status detection or installation
+
+The core browsing and filtering features work on all platforms. Automatic installation features are macOS-specific due to platform differences in plugin management and security handling.
+
 ## Installation
 
-### Option 1: Use the included NW.js bundle
-Simply double-click `GRU.app` to run the application.
+### macOS (Recommended)
+1. Download `GRU-macOS-[version].zip` from [Releases](https://github.com/yourusername/gearmulator-release-updater/releases)
+2. Extract and run `GRU.app`
 
-### Option 2: Use your own NW.js
-1. Download NW.js from: https://nwjs.io/
-2. Run with:
+### Windows (Recommended)
+1. Download `GRU-Windows-[version].zip` from [Releases](https://github.com/yourusername/gearmulator-release-updater/releases)
+2. Extract and run `GRU.exe`
+
+### Use your own NW.js (All Platforms)
+If you have NW.js installed, you can run the app directly from the repository:
+
+1. Clone this repository:
    ```bash
-   /path/to/nw /path/to/gearmulator-release-updater/nwjs.app/Contents/Resources/app.nw
+   git clone https://github.com/yourusername/gearmulator-release-updater.git
    ```
+2. Run with your NW.js installation:
+   ```bash
+   /path/to/nw gearmulator-release-updater/app.nw
+   ```
+
+Alternatively, download `app.nw.zip` from [Releases](https://github.com/yourusername/gearmulator-release-updater/releases) if you don't want to clone the repository.
 
 ## Usage
 
@@ -85,18 +115,15 @@ Simply double-click `GRU.app` to run the application.
 
 ```
 gearmulator-release-updater/
-├── nwjs.app/                           # NW.js application bundle
-│   └── Contents/Resources/app.nw/
-│       ├── package.json                # NW.js configuration
-│       ├── index.html                  # Main HTML file
-│       ├── style.css                   # Styling with dark/light mode
-│       ├── app.js                      # Application logic
-│       └── icon.png                    # App icon
-├── icon.svg                            # Source icon (vector)
-├── icon.png                            # Icon PNG (1024x1024)
-├── icon.icns                           # macOS icon file
-├── create-icon.sh                      # Icon generation script
-├── download.command                    # Original download script
+├── app.nw/                             # Source code (NW.js app)
+│   ├── package.json                    # NW.js configuration
+│   ├── index.html                      # Main HTML file
+│   ├── style.css                       # Styling with dark/light mode
+│   ├── app.js                          # Application logic
+│   └── icon.png                        # App icon
+├── release/                            # Local builds (not in git)
+│   └── GRU.app                         # macOS build
+├── .gitignore                          # Git ignore file
 ├── README.md                           # This file (English)
 └── README_DE.md                        # German documentation
 ```
@@ -105,33 +132,40 @@ gearmulator-release-updater/
 
 ### Prerequisites
 - macOS (for automatic installation features)
-- NW.js (included in nwjs.app)
-
-**Note**: The version in this repository is packaged as a macOS app (`GRU.app`). For Windows, the `app.nw` folder from `GRU.app/Contents/Resources/app.nw` must be manually copied into a Windows NW.js distribution.
-
-### Running the App
-Double-click `nwjs.app` or run from terminal:
-```bash
-open nwjs.app
-```
+- NW.js from https://nwjs.io/
 
 ### Running in Development Mode
 ```bash
-/path/to/nw nwjs.app/Contents/Resources/app.nw
+/path/to/nw app.nw
 ```
 
 ### Editing the Code
-All source files are in `nwjs.app/Contents/Resources/app.nw/`:
+All source files are in the `app.nw/` folder:
 - `app.js` - Main application logic
 - `index.html` - UI structure
 - `style.css` - Styling and themes
 - `package.json` - App configuration
 
-### Building Icons
-Run the included script to generate app icons:
-```bash
-./create-icon.sh
-```
+### Building Releases
+
+1. **For macOS**: Package `app.nw` with NW.js macOS distribution
+2. **For Windows**: Package `app.nw` with NW.js Windows distribution
+3. Create a GitHub Release:
+   ```bash
+   gh release create v1.0.0 \
+     GRU-macOS-1.0.0.zip \
+     GRU-Windows-1.0.0.zip \
+     app.nw.zip \
+     --title "Release v1.0.0" \
+     --notes "Release notes here"
+   ```
+
+### Repository vs. Releases
+
+- **Repository**: Contains only source code (`app.nw/`) and assets
+- **Releases**: Platform-specific builds are published as GitHub Releases
+- The `release/` folder is ignored by git (`.gitignore`) for local testing
+
 
 ## Configuration
 
