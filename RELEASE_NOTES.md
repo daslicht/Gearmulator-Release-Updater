@@ -56,7 +56,9 @@ Enable "Install after download" to automatically:
 
 **Windows:**
 1. Download `GRU-Windows-1.0.0.zip`
-2. Extract and run `GRU.exe`
+2. Extract and run `nw.exe`
+
+> ⚠️ **Note**: The Windows build is untested and needs feedback! Please report any issues.
 
 ### Option 2: Use Your Own NW.js
 
