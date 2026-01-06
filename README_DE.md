@@ -3,6 +3,8 @@
 [🇬🇧 English Version](README.md)
 
 > ⚠️ **Disclaimer**: Dieses Projekt ist zu 100% vibe coded. Ich könnte es auch per Hand machen, aber das dauert länger und so habe ich mehr Zeit für andere wichtige Sachen wie z.B. Musik machen.
+>
+> 🤝 **Pull Requests sind willkommen**, besonders wenn jemand eine Windows- oder Linux-Version hinzufügen mag!
 
 Eine Desktop-Anwendung zum Anzeigen, Filtern und automatischen Installieren von Gearmulator Plugin-Releases von GitHub (automatische Installation: nur macOS).
 
