@@ -1,23 +1,19 @@
 # Gearmulator Release Updater
 
-> ⚠️ **Disclaimer**: This project is 100% vibe coded. I could do it manually, but that takes longer and this way I have more time for other important things like making music.
->
-> 🤝 **Pull requests are welcome**, especially if someone wants to add Windows and Linux builds!
-
 A desktop application for viewing, filtering, and automatically installing Gearmulator plugin releases from GitHub (automatic installation: macOS only).
 
 ## Features
 
-### 🎯 Smart Filtering
+### Smart Filtering
 - **Platform Filter**: macOS, Windows, Linux
 - **Format Filter**: AU, VST3, VST2, CLAP, LV2
 - **Product Filter**: Individual checkboxes for all Gearmulator products
   - JE8086, NodalRed2x, Osirus, OsirusFX, OsTIrus, OsTIrusFX, Vavra, VavraFX, Xenia, XeniaFX
 - **Updates Only**: Show only plugins with available updates
 
-### 🔄 Installation Status
+### Installation Status
 - ✓ **Installed** - Plugin is currently installed
-- 🔄 **Update Available** - Newer version is available for download
+- **Update Available** - Newer version is available for download
 - ○ **Not Installed** - Plugin is not yet installed
 
 Automatically compares installed plugins with available releases by scanning:
@@ -26,7 +22,7 @@ Automatically compares installed plugins with available releases by scanning:
 - `/Library/Audio/Plug-Ins/VST3` (VST3)
 - `/Library/Audio/Plug-Ins/CLAP` (CLAP)
 
-### 🛠️ Automatic Installation
+### Automatic Installation
 Enable "Install after download" to automatically:
 1. Download the selected plugin
 2. Extract the archive
@@ -34,12 +30,12 @@ Enable "Install after download" to automatically:
 4. Apply `xattr -cr` to remove macOS quarantine attributes
 5. Refresh plugin status
 
-### 🎨 Customization
+### Customization
 - **Dark/Light Mode**: Toggle with the moon/sun button
 - **Language**: Switch between English and German with the DE/EN button
 - Settings are saved locally and persist between sessions
 
-### 📊 Statistics
+### Statistics
 - View filtered vs. total download counts
 - See release version and publication date
 - File sizes and download counts
