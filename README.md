@@ -97,6 +97,12 @@ Alternatively, download `app.nw.zip` from [Releases](https://github.com/daslicht
 3. Wait for the download and installation to complete
 4. The app will automatically refresh and show updated status
 
+If you get update errors:
+```
+sudo chown -R "$USER":staff "/Library/Audio/Plug-Ins/Components"
+sudo chmod -R u+rwX "/Library/Audio/Plug-Ins/Components"
+````
+
 **Note**: Automatic installation may request administrator privileges to apply security attributes.
 
 ### Keyboard Shortcuts
